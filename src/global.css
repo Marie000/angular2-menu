@@ -24,3 +24,7 @@ input, textarea {
 .form-item{
     padding: 5px 0;
 }
+.test {
+    margin: 0 30%;
+    background-color:lightblue;
+}

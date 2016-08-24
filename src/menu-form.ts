@@ -24,9 +24,14 @@ import { ITEMS } from './mock-data';
         </div>
         <input type="submit" value="submit" />
         </form>
+        <div class="test">
+        <p>This is a test list, to show that the list updates properly with new item if displayed in the same component. 
+        It does not update in the actual display for some reason. 
+        </p>
         <ul>
                 <li *ngFor="let item of list">{{item.name}}</li>
                 </ul>
+                </div>
 
     `,
     providers: [MenuService]
