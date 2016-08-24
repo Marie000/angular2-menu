@@ -8,7 +8,7 @@ import { Menu } from './menu-main';
     selector:'app',
     template:'<menu>loading...</menu>',
     directives: [Menu],
-    providers:[MenuService]
+    providers: [MenuService]
 })
 
 class App {}

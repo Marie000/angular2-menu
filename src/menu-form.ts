@@ -1,39 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { MenuService } from './menu-service';
-import { ITEMS } from './mock-data';
 
 
 @Component({
     selector: 'menu-form',
-    template: `
-        <form (submit)="onSubmit()">
-        <div class="form-item">
-            <label>Item name: </label><input type="text" [(ngModel)]="item.name" /><br />
-        </div>
-        <div class="form-item">
-            <label>Price: </label><input type="text" [(ngModel)]="item.price" /><br />
-        </div>
-        <div class="form-item">        
-            <label>Description: </label><textarea [(ngModel)]="item.description" ></textarea><br />
-         </div>
-         <div class="form-item">
-            <label>Category: </label> 
-                <select id="category" [(ngModel)]="item.category" name="category"  >
-          <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-        </select>
-        </div>
-        <input type="submit" value="submit" />
-        </form>
-        <div class="test">
-        <p>This is a test list, to show that the list updates properly with new item if displayed in the same component. 
-        It does not update in the actual display for some reason. 
-        </p>
-        <ul>
-                <li *ngFor="let item of list">{{item.name}}</li>
-                </ul>
-                </div>
-
-    `,
+    templateUrl:'./template-form.html',
     providers: [MenuService]
 
 })
@@ -55,7 +26,8 @@ export class Form {
             "inventory":0,
             "category":this.item.category
         });
-        console.log(ITEMS);
+        //This sends the data correctly to the mock-data, but other components (notably the menu-category)
+        //does not update its display.
    }
 
 }
